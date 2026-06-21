@@ -29,6 +29,10 @@
 ├── .gitignore
 ├── src/
 │   └── michelson_interferometer_monitor.py
+├── video/
+│   ├── 31.mp4
+│   ├── 32.mp4
+│   └── 33.mp4
 ├── original/
 │   └── 干涉条纹监测.py
 └── docs/
@@ -37,6 +41,8 @@
 ```
 
 `src/michelson_interferometer_monitor.py` 是整理后用于 GitHub 展示的主程序；`original/干涉条纹监测.py` 保留原始代码，便于对照。
+
+`video/` 目录中包含三段演示视频，均可用于测试算法运行效果。其中 `33.mp4` 条纹变化更明显，适合作为课堂展示和项目演示的默认样例。
 
 ## 环境依赖
 
@@ -58,16 +64,22 @@ pip install -r requirements.txt
 python src/michelson_interferometer_monitor.py
 ```
 
-程序启动后，在界面中选择视频文件。原始实验中推荐使用 `video/33.mp4` 作为演示视频。
+程序启动后，在界面中点击文件选择按钮，选择 `video/` 目录下的演示视频。推荐优先使用：
 
-如果要把样例视频也放入本地项目，可建立如下目录：
+```text
+video/33.mp4
+```
+
+当前项目已包含三段演示视频：
 
 ```text
 video/
+  31.mp4
+  32.mp4
   33.mp4
 ```
 
-由于视频文件通常较大，GitHub 仓库中不建议直接上传 `.mp4` 文件。可以只保留代码与说明文档，把视频样例放在网盘、Release 或实验报告附件中。
+如果只想快速演示，建议选择 `video/33.mp4`；如果想对比不同扰动效果，可以分别运行 `31.mp4`、`32.mp4` 和 `33.mp4`。
 
 ## 界面参数
 
@@ -86,14 +98,25 @@ video/
 
 - `src/`
 - `docs/`
+- `original/`
+- `video/31.mp4`
+- `video/32.mp4`
+- `video/33.mp4`
 - `README.md`
 - `requirements.txt`
 - `.gitignore`
 
 不建议上传：
 
-- `.mp4` 视频文件
 - 临时运行结果
 - 本地缓存文件
+- 虚拟环境目录
 
-如果需要展示实验效果，可以在 README 中放置一张截图，或在 Release 中上传演示视频。
+当前三段演示视频单文件均小于 GitHub 的 100MB 限制，可以随仓库一起上传。如果后续加入更长或更高清的视频，建议改放到 Release 或网盘，并在 README 中补充链接。
+
+## 说明文档
+
+- `docs/algorithm.md`：介绍条纹监测算法原理和计数逻辑。
+- `docs/usage.md`：记录环境安装、视频准备、运行步骤和常见问题。
+
+如果后续继续完善项目，可以增加实验装置照片、运行截图或处理前后对比图，让 GitHub 页面更直观。
